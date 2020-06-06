@@ -23,9 +23,10 @@ typedef struct
 	GamerzillaTrophy *trophy;
 } Gamerzilla;
 
-extern bool GamerzillaInit(bool server, const char *savedir);
+extern bool GamerzillaStart(bool server, const char *savedir);
 extern bool GamerzillaConnect(const char *url, const char *username, const char *password);
-extern int GamerzillaGameInit(Gamerzilla *g);
+extern void GamerzillaInitGame(Gamerzilla *g);
+extern int GamerzillaSetGame(Gamerzilla *g);
 extern void GamerzillaGameAddTrophy(Gamerzilla *g, char *name, char *desc, int max_progress, char *true_image, char *false_image);
 %include "typemaps.i"
 extern bool GamerzillaGetTrophy(int game_id, const char *name, bool *OUTPUT);
