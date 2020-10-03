@@ -1,7 +1,7 @@
 Summary: Python Integration with Gamerzilla Library
 Name: pylibgamerzilla
 Version: 0.0.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: MIT
 URL: https://github.com/dulsi/pylibgamerzilla
 Source0: http://www.identicalsoftware.com/gamerzilla/%{name}-%{version}.tgz
@@ -10,6 +10,7 @@ BuildRequires: gcc-c++
 BuildRequires: swig
 BuildRequires: cmake
 BuildRequires: libgamerzilla-devel
+BuildRequires: python3-devel
 
 %description
 Python interface to the Gamerzilla trophy/achievement system for games.
@@ -35,6 +36,9 @@ cp %{_builddir}/%{name}-%{version}/gamerzilla.py $RPM_BUILD_ROOT%{python3_siteli
 %{python3_sitelib}/__pycache__/gamerzilla.cpython-%{python3_version_nodots}{,.opt-?}.pyc
 
 %changelog
+* Sat Oct 03 2020 Dennis Payne <dulsi@identicalsoftware.com> - 0.0.1-3
+- Add another missing build requires
+
 * Sat Oct 03 2020 Dennis Payne <dulsi@identicalsoftware.com> - 0.0.1-2
 - Add missing build requires
 
